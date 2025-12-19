@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 import { MousePointer2 } from 'lucide-react';
-import profilePic from '../../assets/me/me.png';
+import profilePic from '../../assets/me/me1.png';
 
 export default function Hero() {
     return (
