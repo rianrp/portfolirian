@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    color-scheme: dark;
+}
+
+body {
+    @apply bg-background text-primary antialiased selection:bg-accent/30 selection:text-white;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-surface rounded-full;
+    border: 2px solid theme('colors.background');
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-700;
+}
+
+/* Base Heading Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-bold tracking-tight text-white;
+}
+
+p {
+    @apply text-secondary leading-relaxed;
+}
