@@ -5,13 +5,26 @@ import Section from '../Layout/Section';
 export default function Experience() {
     const experiences = [
         {
-            company: 'Lines360',
-            role: 'Senior Software Engineer',
-            period: 'July 2022 - Present',
-            description: 'Leading frontend architecture and critical business modules for a corporate travel platform. Designed OCR + AI pipeline for expense automation and implemented real-time features using SignalR and Maps.',
-            tags: ['React', 'TypeScript', 'Google Vision AI', 'SignalR']
+            company: "Lines360",
+            role: "Senior Software Engineer",
+            period: "July 2022 - Present",
+            description:
+                "Led core architecture and feature development across web & mobile for a corporate travel and expense ecosystem. Designed scalable modules, improved performance, reduced operational cost, and introduced AI-driven automations for real business workflows.",
+            achievements: [
+                "Designed and built the expense automation engine using OCR + AI, reducing manual input and processing time.",
+                "Created real-time trip and mileage tracking system using geolocation services and background sync.",
+                "Structured the frontend architecture using React + TypeScript patterns (Atomic Design, feature modules, hooks abstraction).",
+                "Implemented CI/CD pipelines improving deployment safety & frequency.",
+                "Collaborated directly with business leadership to design and ship mission-critical features at production scale."
+            ],
+            stack: [
+                "React", "Next.js", "TypeScript", "Tailwind", "React Native",
+                ".NET 6", "C#", "SignalR", "Google Vision AI", "Stripe",
+                "AWS", "Azure", "SQL Server", "PostgreSQL"
+            ]
         }
     ];
+
 
     return (
         <Section id="experience">
@@ -48,7 +61,7 @@ export default function Experience() {
                             </p>
 
                             <div className="flex flex-wrap gap-2">
-                                {exp.tags.map((tag, i) => (
+                                {exp.stack.map((tag, i) => (
                                     <span key={i} className="px-3 py-1 text-xs font-medium rounded-full bg-white/5 text-secondary border border-white/5">
                                         {tag}
                                     </span>

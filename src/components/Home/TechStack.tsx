@@ -3,10 +3,68 @@ import Section from '../Layout/Section';
 
 export default function TechStack() {
     const skills = [
-        { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'Framer Motion'] },
-        { category: 'Backend', items: ['.NET', 'Node.js', 'C#', 'PostgreSQL', 'Firebase'] },
-        { category: 'AI & Data', items: ['OpenAI API', 'TensorFlow', 'Python', 'Embeddings', 'OCR'] },
-        { category: 'Architecture', items: ['Clean Arch', 'Microservices', 'CI/CD', 'Docker', 'Cloud'] },
+        {
+            category: "Frontend",
+            items: [
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Tailwind",
+                "Material UI",
+                "React Native",
+                "Zustand",
+                "Redux Toolkit",
+                "Storybook",
+                "Framer Motion",
+                "E2E Testing (Playwright)"
+            ]
+        },
+        {
+            category: "Backend",
+            items: [
+                ".NET",
+                "Node.js",
+                "C#",
+                "REST APIs",
+                "GraphQL",
+                "SQL Server",
+                "PostgreSQL",
+                "MySQL",
+                "Firebase",
+                "Prisma ORM",
+                "tRPC"
+            ]
+        },
+        {
+            category: "AI & Data",
+            items: [
+                "OpenAI API",
+                "LangChain",
+                "Python",
+                "Embeddings",
+                "OCR",
+                "Vector DBs",
+                "LLM Chaining",
+                "Transformers",
+                "Deep Learning",
+                "TensorFlow"
+            ]
+        },
+        {
+            category: "Architecture",
+            items: [
+                "Clean Arch",
+                "SOLID",
+                "Design Patterns",
+                "Microservices",
+                "Monorepo (Nx/Turborepo)",
+                "CI/CD",
+                "Docker",
+                "Cloud (AWS/Azure)",
+                "Serverless",
+                "Observability"
+            ]
+        }
     ];
 
     return (
