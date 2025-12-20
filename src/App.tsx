@@ -10,11 +10,11 @@ import BackgroundEffect from './components/Layout/BackgroundEffect';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-background text-primary selection:bg-accent/30 selection:text-white overflow-hidden">
+    <div className="relative min-h-screen bg-background text-primary selection:bg-accent/30 selection:text-white">
       <BackgroundEffect />
       <MouseSpotlight />
       <Navbar />
-      <main className="container relative z-10 px-6 pt-24 md:px-0 mx-auto">
+      <main className="container relative z-10 px-0 pt-14 md:px-0">
         <Hero />
         <TechStack />
         <Experience />

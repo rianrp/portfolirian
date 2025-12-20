@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 
 export default function Footer() {
     return (
-        <footer className="bg-[#030712] border-t border-white/5 py-12">
+        <footer className="relative z-20 bg-[#030712] border-t border-white/5 py-12">
             <div className="container mx-auto px-6 text-center">
                 <div className="flex justify-center gap-6 mb-8">
                     <a href="https://github.com/rianrp" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">

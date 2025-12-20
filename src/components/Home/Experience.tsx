@@ -28,7 +28,7 @@ export default function Experience() {
 
     return (
         <Section id="experience">
-            <div className="container px-4 md:px-6 mx-auto">
+            <div className="container px-6 md:px-6 mx-auto">
                 <div className="flex items-end gap-3 md:gap-4 mb-8 md:mb-12">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
                         Experience

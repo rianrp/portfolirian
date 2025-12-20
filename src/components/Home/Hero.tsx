@@ -9,7 +9,7 @@ export default function Hero() {
 
             {/* Background Decorations */}
             <div className="absolute inset-0 overflow-hidden -z-10">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-accent/20 rounded-full blur-[120px]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-accent/5 md:bg-accent/10 rounded-full blur-[150px]" />
             </div>
 
             <div className="container px-4 md:px-6 mx-auto text-center">
@@ -20,8 +20,8 @@ export default function Hero() {
                     className="flex flex-col items-center max-w-3xl mx-auto space-y-5 md:space-y-8"
                 >
                     {/* Avatar / Profile Placeholder */}
-                    <div className="relative group">
-                        <div className="relative z-10 flex items-center justify-center w-24 h-24 md:w-32 md:h-32 overflow-hidden border-2 rounded-full border-white/10 bg-surface">
+                    <div className="relative group pb-4 md:pb-5">
+                        <div className="relative z-10 flex items-center justify-center w-24 h-24 md:w-32 md:h-32 overflow-hidden border-2 rounded-full border-white/10">
                             <img
                                 src={profilePic}
                                 alt="Rian Rodrigues"
