@@ -1,40 +1,54 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Play, ArrowRight } from 'lucide-react';
 import Section from '../Layout/Section';
-import image1 from '../../assets/writterbook/image1.png';
-import bestialDesktop from '../../assets/bestialstore/bestial_principal_page_desktop.png';
+import inspiraviewImage from '../../assets/inspiraview/image1.png';
 
 export default function Projects() {
     const projects = [
         {
-            title: 'WritterBook',
-            status: 'Coming Soon',
-            statusColor: 'bg-purple-500',
-            date: '2025-01-15',
-            type: 'AI-Powered SaaS',
-            description: 'SaaS platform for writers with chapters, pages, cloud sync, and AI-assisted writing. Features include AI-generated summaries, rewriting, and content continuation.',
-            tags: ['React', 'Firebase', 'OpenAI', 'SignalR'],
-            image: image1,
-            links: {
-                website: '#',
-                github: '#',
-                demo: '#'
-            }
-        },
-        {
-            title: 'Bestial Store',
+            title: 'InspiraView',
             status: 'Live',
             statusColor: 'bg-green-500',
-            date: '2024-11-15',
-            type: 'E-commerce',
-            description: 'Full-featured e-commerce platform with real-time inventory, secure payments, and a custom admin dashboard for order management.',
-            tags: ['React', 'Node.js', 'Stripe', 'MongoDB'],
-            image: bestialDesktop,
+            date: '2024-12-20',
+            type: 'Desktop App',
+            description: 'Infinite canvas moodboard for creatives. Organize references, ideas and notes in a distraction-free space. Features drag & drop images, sticky notes, filters, guides, and always-on-top mode.',
+            tags: ['Tauri', 'React', 'TypeScript', 'Vite', 'Rust'],
+            image: inspiraviewImage,
             links: {
-                website: '#',
-                github: '#'
+                website: 'https://inspiraview.netlify.app/',
+                github: 'https://github.com/rianrp/Inspiraview',
+                demo: 'https://inspiraview.netlify.app/'
             }
-        }
+        },
+        // {
+        //     title: 'WritterBook',
+        //     status: 'Coming Soon',
+        //     statusColor: 'bg-purple-500',
+        //     date: '2025-01-15',
+        //     type: 'AI-Powered SaaS',
+        //     description: 'SaaS platform for writers with chapters, pages, cloud sync, and AI-assisted writing. Features include AI-generated summaries, rewriting, and content continuation.',
+        //     tags: ['React', 'Firebase', 'OpenAI', 'SignalR'],
+        //     image: image1,
+        //     links: {
+        //         website: '#',
+        //         github: '#',
+        //         demo: '#'
+        //     }
+        // },
+        // {
+        //     title: 'Bestial Store',
+        //     status: 'Live',
+        //     statusColor: 'bg-green-500',
+        //     date: '2024-11-15',
+        //     type: 'E-commerce',
+        //     description: 'Full-featured e-commerce platform with real-time inventory, secure payments, and a custom admin dashboard for order management.',
+        //     tags: ['React', 'Node.js', 'Stripe', 'MongoDB'],
+        //     image: bestialDesktop,
+        //     links: {
+        //         website: '#',
+        //         github: '#'
+        //     }
+        // }
     ];
 
     return (

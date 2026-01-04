@@ -3,10 +3,11 @@ import Footer from './components/Layout/Footer';
 import Hero from './components/Home/Hero';
 import Experience from './components/Home/Experience';
 import TechStack from './components/Home/TechStack';
-import Projects from './components/Home/Projects';
+// import Projects from './components/Home/Projects';
 import Contact from './components/Home/Contact';
 import MouseSpotlight from './components/Layout/MouseSpotlight';
 import BackgroundEffect from './components/Layout/BackgroundEffect';
+import Projects from './components/Home/Projects';
 
 function App() {
   return (
@@ -17,8 +18,8 @@ function App() {
       <main className="container relative z-10 px-0 pt-14 md:px-0">
         <Hero />
         <TechStack />
-        <Experience />
-        {/* <Projects /> */}
+        <Experience />       
+        <Projects />
         <Contact />
       </main>
       <Footer />
@@ -27,3 +28,6 @@ function App() {
 }
 
 export default App;
+          
+
+
