@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Github, Play, ArrowRight } from 'lucide-react';
 import Section from '../Layout/Section';
 import inspiraviewImage from '../../assets/inspiraview/image1.png';
+import EurOrbit from '../../assets/eurorbit/eurorbit.png';
+import SugarlandTheaters from '../../assets/sugarlandtheaters/sugarland-desktop.png';
 
 export default function Projects() {
     const projects = [
@@ -18,6 +20,46 @@ export default function Projects() {
                 website: 'https://inspiraview.netlify.app/',
                 github: 'https://github.com/rianrp/Inspiraview',
                 demo: 'https://inspiraview.netlify.app/'
+            }
+        },
+        {
+            title: 'EurOrbit',
+            status: 'Live',
+            statusColor: 'bg-green-500',
+            date: '2025-12-20',
+            type: 'Website',
+            description: 'Desenvolvi em 4 etapas: (1) Estruturei HTML5 com dropdown de cidades e área de exibição; (2) Estilizei com CSS3 responsivo, gradientes azuis e Grid layout; (3) Programei JavaScript com async/await para chamadas à API, processamento JSON e geração dinâmica de conteúdo; (4) Implementei tratamento de erros, conversão de temperatura e mapeamento de 15 condições climáticas para ícones. Testei em múltiplos dispositivos e validei todas funcionalidades.',
+            tags: ['Web Design', 'React', 'TypeScript', 'Vite', 'Rust'],
+            image: EurOrbit,
+            links: {
+                website: 'https://rianrp.github.io/EurOrbit/',
+                github: 'https://github.com/rianrp/EurOrbit',
+                demo: 'https://rianrp.github.io/EurOrbit/'
+            }
+        },
+        {
+            title: 'Sugarland Theaters',
+            status: 'Live',
+            statusColor: 'bg-green-500',
+            date: '2026-01-10',
+            type: 'Web Application',
+            description:
+                'Plataforma frontend de cinema simulando um sistema real de venda de ingressos. Inclui listagem de filmes, busca e filtros por gênero, páginas de detalhes com trailer, e fluxo completo de seleção de assentos com gerenciamento de estado complexo (disponível, selecionado e ocupado), foco em experiência do usuário e arquitetura de componentes reutilizáveis.',
+            tags: [
+                'React',
+                'JavaScript',
+                'Component-Based Architecture',
+                'State Management',
+                'UI/UX',
+                'Responsive Design',
+                'Web Application',
+                'Frontend Engineering'
+            ],
+            image: SugarlandTheaters,
+            links: {
+                website: 'https://github.com/rianrp/Sugarland-Theaters', // ajuste se necessário
+                github: 'https://rianrp.github.io/Sugarland-Theaters/', // ajuste se necessário
+                demo: 'https://github.com/rianrp/Sugarland-Theaters'
             }
         },
         // {

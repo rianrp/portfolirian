@@ -8,6 +8,7 @@ import Contact from './components/Home/Contact';
 import MouseSpotlight from './components/Layout/MouseSpotlight';
 import BackgroundEffect from './components/Layout/BackgroundEffect';
 import Projects from './components/Home/Projects';
+import Certifications from './components/Home/Certifications';
 
 function App() {
   return (
@@ -17,9 +18,10 @@ function App() {
       <Navbar />
       <main className="container relative z-10 px-0 pt-14 md:px-0">
         <Hero />
-        <TechStack />
-        <Experience />       
         <Projects />
+        <Experience />
+        <TechStack />
+        <Certifications />
         <Contact />
       </main>
       <Footer />
@@ -28,6 +30,3 @@ function App() {
 }
 
 export default App;
-          
-
-
