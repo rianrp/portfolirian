@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 import { MousePointer2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import profilePic from '../../assets/me/me1.png';
 
 export default function Hero() {
+    const { t } = useTranslation();
     return (
         <section className="relative flex items-center justify-center min-h-screen pt-16 md:pt-20 overflow-hidden">
 
@@ -34,7 +36,7 @@ export default function Hero() {
                                 <span className="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-green-500"></span>
                                 <span className="relative inline-flex w-2 h-2 rounded-full bg-green-500"></span>
                             </span>
-                            Open to work
+                            {t('hero.openToWork')}
                         </div>
                     </div>
 
@@ -49,7 +51,7 @@ export default function Hero() {
                     </div>
 
                     <p className="max-w-xl text-sm md:text-lg text-secondary leading-relaxed px-6 md:px-0">
-                        Specialized in scalable frontend architectures, complex integrations, and AI-powered solutions.
+                        {t('hero.description')}
                     </p>
 
                     {/* Social Links */}

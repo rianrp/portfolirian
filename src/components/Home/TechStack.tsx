@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Section from '../Layout/Section';
 
 export default function TechStack() {
+    const { t } = useTranslation();
     const skills = [
         {
             category: "Frontend",
@@ -71,9 +73,9 @@ export default function TechStack() {
         <Section>
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical <span className="text-accent">Arsenal</span></h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('techStack.title')} <span className="text-accent">{t('techStack.titleAccent')}</span></h2>
                     <p className="text-secondary max-w-2xl mx-auto">
-                        A comprehensive stack built for scalability, performance, and modern user experiences.
+                        {t('techStack.subtitle')}
                     </p>
                 </div>
 

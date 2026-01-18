@@ -1,29 +1,12 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { useLocalizedContent } from '../../hooks/useLocalizedContent';
 import Section from '../Layout/Section';
 
 export default function Experience() {
-    const experiences = [
-        {
-            company: "Lines360",
-            role: "Senior Software Engineer",
-            period: "July 2022 - Present",
-            description:
-                "Led core architecture and feature development across web & mobile for a corporate travel and expense ecosystem. Designed scalable modules, improved performance, reduced operational cost, and introduced AI-driven automations for real business workflows.",
-            achievements: [
-                "Designed and built the expense automation engine using OCR + AI, reducing manual input and processing time.",
-                "Created real-time trip and mileage tracking system using geolocation services and background sync.",
-                "Structured the frontend architecture using React + TypeScript patterns (Atomic Design, feature modules, hooks abstraction).",
-                "Implemented CI/CD pipelines improving deployment safety & frequency.",
-                "Collaborated directly with business leadership to design and ship mission-critical features at production scale."
-            ],
-            stack: [
-                "React", "Next.js", "TypeScript", "Tailwind", "React Native",
-                ".NET 6", "C#", "SignalR", "Google Vision AI", "Stripe",
-                "AWS", "Azure", "SQL Server", "PostgreSQL"
-            ]
-        }
-    ];
+    const { t } = useTranslation();
+    const { experience } = useLocalizedContent();
 
 
     return (
@@ -31,13 +14,13 @@ export default function Experience() {
             <div className="container px-6 md:px-6 mx-auto">
                 <div className="flex items-end gap-3 md:gap-4 mb-8 md:mb-12">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-                        Experience
+                        {t('experience.title')}
                     </h2>
                     <div className="h-1 flex-1 bg-white/10 mb-2 rounded-full" />
                 </div>
 
                 <div className="space-y-12 max-w-4xl">
-                    {experiences.map((exp, index) => (
+                    {experience.map((exp, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}

@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Mail, MessageSquare, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Section from '../Layout/Section';
 
 export default function Contact() {
+    const { t } = useTranslation();
     return (
         <Section id="contact" className="py-32 relative overflow-hidden">
             {/* Background gradients */}
@@ -19,17 +21,16 @@ export default function Contact() {
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full text-accent text-sm font-medium mb-8">
                         <MessageSquare size={16} />
-                        <span>Available for new opportunities</span>
+                        <span>{t('contact.badge')}</span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight">
-                        Ready to scale your <br />
-                        <span className="text-secondary">Frontend Architecture?</span>
+                        {t('contact.heading')} <br />
+                        <span className="text-secondary">{t('contact.headingAccent')}</span>
                     </h2>
 
                     <p className="text-xl text-secondary mb-12 max-w-2xl mx-auto">
-                        I help companies build high-performance, maintainable web applications.
-                        Let's discuss how I can contribute to your team.
+                        {t('contact.description')}
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -38,7 +39,7 @@ export default function Contact() {
                             className="group px-8 py-4 bg-accent hover:bg-accent/90 text-white rounded-xl font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-accent/25 hover:shadow-accent/40"
                         >
                             <Mail size={20} />
-                            Send Me an Email
+                            {t('contact.emailButton')}
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                         </a>
 
@@ -48,7 +49,7 @@ export default function Contact() {
                             rel="noopener noreferrer"
                             className="px-8 py-4 bg-surface hover:bg-surface/80 text-white rounded-xl font-bold text-lg transition-all duration-300 border border-white/5"
                         >
-                            Connect on LinkedIn
+                            {t('contact.linkedinButton')}
                         </a>
                     </div>
                 </motion.div>

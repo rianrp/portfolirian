@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Play, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Section from '../Layout/Section';
 import inspiraviewImage from '../../assets/inspiraview/image1.png';
 import EurOrbit from '../../assets/eurorbit/eurorbit.png';
 import SugarlandTheaters from '../../assets/sugarlandtheaters/sugarland-desktop.png';
 
 export default function Projects() {
+    const { t } = useTranslation();
     const projects = [
         {
             title: 'InspiraView',
@@ -98,7 +100,7 @@ export default function Projects() {
             <div className="container px-4 md:px-6 mx-auto">
                 <div className="flex items-center gap-3 md:gap-4 mb-8 md:mb-12">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-                        Projects <span className="text-secondary text-lg md:text-2xl font-normal">({projects.length})</span>
+                        {t('projects.title')} <span className="text-secondary text-lg md:text-2xl font-normal">({projects.length})</span>
                     </h2>
                     <div className="h-px flex-1 bg-white/10" />
                 </div>
@@ -156,19 +158,19 @@ export default function Projects() {
                                     {project.links.website && (
                                         <a href={project.links.website} className="flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors">
                                             <ExternalLink size={18} />
-                                            Website
+                                            {t('projects.website')}
                                         </a>
                                     )}
                                     {project.links.github && (
                                         <a href={project.links.github} className="flex items-center gap-2 text-secondary hover:text-white transition-colors">
                                             <Github size={18} />
-                                            Source
+                                            {t('projects.source')}
                                         </a>
                                     )}
                                     {project.links.demo && (
                                         <a href={project.links.demo} className="flex items-center gap-2 text-secondary hover:text-white transition-colors">
                                             <Play size={18} />
-                                            Demo
+                                            {t('projects.demo')}
                                         </a>
                                     )}
                                 </div>
@@ -179,7 +181,7 @@ export default function Projects() {
 
                 <div className="mt-12 text-center">
                     <a href="https://github.com/rianrp" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-white transition-colors">
-                        View all projects <ArrowRight size={18} />
+                        {t('projects.viewAll')} <ArrowRight size={18} />
                     </a>
                 </div>
             </div>

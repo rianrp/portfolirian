@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Award, ExternalLink } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Section from '../Layout/Section';
 
 export default function Certifications() {
+    const { t } = useTranslation();
     const certifications = [
         {
             title: "Builders Guide to the AI SDK",
@@ -100,7 +102,7 @@ export default function Certifications() {
             <div className="container px-6 md:px-6 mx-auto">
                 <div className="flex items-end gap-3 md:gap-4 mb-8 md:mb-12">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-                        Certifications
+                        {t('certifications.title')}
                     </h2>
                     <div className="h-1 flex-1 bg-white/10 mb-2 rounded-full" />
                 </div>
@@ -141,7 +143,7 @@ export default function Certifications() {
                                 </div>
 
                                 <div className="text-xs text-secondary mb-3">
-                                    {cert.date} • ID: {cert.credentialId}
+                                    {cert.date}{cert.credentialId && ` • ${t('certifications.credentialId')}: ${cert.credentialId}`}
                                 </div>
 
                                 <p className="text-sm text-secondary leading-relaxed">

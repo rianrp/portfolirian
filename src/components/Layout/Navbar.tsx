@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Home, User, Briefcase, Code2, Mail, Github, Linkedin } from 'lucide-react';
+import { Menu, X, Home, User, Briefcase, Code2, Mail, Github, Linkedin, Award } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navbar() {
+    const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
@@ -15,11 +18,12 @@ export default function Navbar() {
     }, []);
 
     const navLinks = [
-        { name: 'Home', href: '#hero', icon: Home },
-        { name: 'About', href: '#about', icon: User },
-        { name: 'Experience', href: '#experience', icon: Briefcase },
-        { name: 'Projects', href: '#projects', icon: Code2 },
-        { name: 'Contact', href: '#contact', icon: Mail },
+        { name: t('nav.home'), href: '#hero', icon: Home },
+        { name: t('nav.projects'), href: '#projects', icon: Code2 },
+        { name: t('nav.experience'), href: '#experience', icon: Briefcase },
+        { name: t('nav.techStack'), href: '#techstack', icon: User },
+        { name: t('nav.certifications'), href: '#certifications', icon: Award },
+        { name: t('nav.contact'), href: '#contact', icon: Mail },
     ];
 
     return (
@@ -69,6 +73,7 @@ export default function Navbar() {
 
                     {/* Social Icons - Desktop */}
                     <div className="hidden md:flex items-center gap-3 pl-6 border-l border-white/10">
+                        <LanguageSwitcher />
                         <a href="https://github.com/rianrp" target="_blank" rel="noopener noreferrer" className="p-2 text-secondary hover:text-white hover:bg-white/5 rounded-full transition-colors">
                             <Github size={18} />
                         </a>
@@ -113,7 +118,8 @@ export default function Navbar() {
                             ))}
 
                             {/* Mobile Socials */}
-                            <div className="flex justify-center gap-8 pt-6 border-t border-white/10 w-full max-w-[200px]">
+                            <div className="flex justify-center gap-6 pt-6 border-t border-white/10 w-full max-w-[280px]">
+                                <LanguageSwitcher />
                                 <a href="https://github.com/rianrp" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white">
                                     <Github size={24} />
                                 </a>
