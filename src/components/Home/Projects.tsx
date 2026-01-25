@@ -5,6 +5,8 @@ import Section from '../Layout/Section';
 import inspiraviewImage from '../../assets/inspiraview/image1.png';
 import EurOrbit from '../../assets/eurorbit/eurorbit.png';
 import SugarlandTheaters from '../../assets/sugarlandtheaters/sugarland-desktop.png';
+import TileKit from '../../assets/tilekit/land.png';
+import Warhall from '../../assets/warhall/footer.png';
 
 export default function Projects() {
     const { t } = useTranslation();
@@ -22,6 +24,34 @@ export default function Projects() {
                 website: 'https://inspiraview.netlify.app/',
                 github: 'https://github.com/rianrp/Inspiraview',
                 demo: 'https://inspiraview.netlify.app/'
+            }
+        },
+        {
+            title: 'Tilekit',
+            status: 'Live',
+            statusColor: 'bg-green-500',
+            date: '2026-01-25',
+            type: 'Developer Tool',
+            description: 'Tilekit is a web-based tile map editor combined with a Phaser integration library. The project was developed in stages: (1) creation of a lightweight canvas-based editor focused on grid precision and ease of use; (2) definition of a simple, explicit JSON map format optimized for runtime usage; (3) development of a Phaser helper library that loads maps with rendering, layers, collisions, and world bounds using a single function; (4) publishing the library as an npm package with TypeScript support and clear documentation. The tool is designed to eliminate complex pipelines and provide a predictable map-to-engine workflow.',
+            tags: ['Game Development', 'Phaser', 'TypeScript', 'Canvas', 'Vite', 'npm', 'Open Source'],
+            image: TileKit,
+            links: {
+                website: 'https://tilekit.pages.dev', // se ainda não tiver, pode comentar
+                github: 'https://github.com/rianrp/tilekitphaser',
+                demo: 'https://www.npmjs.com/package/@devince/tilekit-phaser'
+            }
+        },
+        {
+            title: 'WarHall Tournament',
+            status: 'Live',
+            statusColor: 'bg-green-500',
+            date: '2026-01-25',
+            type: 'Tournament Platform',
+            description: 'WarHall is a competitive tournament platform focused on structured events, fair matchmaking, and real rewards. The project centralizes tournament organization by managing registrations, rules, brackets, and match visibility in a single environment. Events follow a classic, competitive format with scheduled fights and official recording of matches published on WarHall’s channels. The platform is designed to eliminate disorganization and provide a professional, transparent experience for both players and organizers.',
+            tags: ['Esports', 'Competitive Gaming', 'Tournaments', 'Community', 'Events'],
+            image: Warhall,
+            links: {
+                website: 'https://warhalltournament.pages.dev/',
             }
         },
         {
