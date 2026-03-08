@@ -4,11 +4,26 @@
 
 :root {
     color-scheme: dark;
+    --color-background: 0 0 0;
+    --color-surface: 10 10 10;
+    --color-primary: 248 250 252;
+    --color-secondary: 161 161 170;
+    --color-accent: 99 102 241;
+}
+
+[data-theme="light"] {
+    color-scheme: light;
+    --color-background: 248 250 252;
+    --color-surface: 255 255 255;
+    --color-primary: 15 23 42;
+    --color-secondary: 71 85 105;
+    --color-accent: 99 102 241;
 }
 
 body {
-    @apply bg-background text-primary antialiased selection:bg-accent/30 selection:text-white;
+    @apply bg-background text-primary antialiased selection:bg-accent/30 selection:text-primary;
     overflow-x: hidden;
+    transition: background-color 200ms ease, color 200ms ease;
 }
 
 /* Custom Scrollbar */
@@ -22,11 +37,11 @@ body {
 
 ::-webkit-scrollbar-thumb {
     @apply bg-surface rounded-full;
-    border: 2px solid theme('colors.background');
+    border: 2px solid rgb(var(--color-background));
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gray-700;
+    @apply bg-secondary/40;
 }
 
 /* Base Heading Styles */
@@ -36,7 +51,7 @@ h3,
 h4,
 h5,
 h6 {
-    @apply font-bold tracking-tight text-white;
+    @apply font-bold tracking-tight text-primary;
 }
 
 p {

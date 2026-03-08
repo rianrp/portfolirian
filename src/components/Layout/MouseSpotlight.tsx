@@ -55,7 +55,7 @@ export default function MouseSpotlight() {
                 className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300"
                 style={{
                     opacity: isVisible ? 1 : 0,
-                    background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, rgba(255, 255, 255, 0.03), transparent 70%)`,
+                    background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, rgba(var(--color-primary), 0.08), transparent 70%)`,
                 }}
             />
             
@@ -71,7 +71,7 @@ export default function MouseSpotlight() {
             >
                 <Satellite 
                     size={32} 
-                    className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
+                    className="text-primary drop-shadow-[0_0_8px_rgba(99,102,241,0.35)]"
                 />
             </div>
 
@@ -80,7 +80,7 @@ export default function MouseSpotlight() {
                 {ripples.map((ripple) => (
                     <motion.div
                         key={ripple.id}
-                        className="pointer-events-none fixed z-35 rounded-full border-2 border-white"
+                        className="pointer-events-none fixed z-35 rounded-full border-2 border-primary"
                         style={{
                             left: ripple.x,
                             top: ripple.y,
@@ -113,7 +113,7 @@ export default function MouseSpotlight() {
                 {ripples.map((ripple) => (
                     <motion.div
                         key={`ripple2-${ripple.id}`}
-                        className="pointer-events-none fixed z-35 rounded-full border border-white/50"
+                        className="pointer-events-none fixed z-35 rounded-full border border-primary/50"
                         style={{
                             left: ripple.x,
                             top: ripple.y,

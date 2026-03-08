@@ -27,14 +27,14 @@ export default function LanguageToast() {
           className="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 bg-surface border border-accent/30 rounded-lg shadow-xl backdrop-blur-md"
         >
           <CheckCircle2 size={20} className="text-accent" />
-          <span className="text-sm font-medium text-white">
+          <span className="text-sm font-medium text-primary">
             {language === '🇧🇷 Português' 
               ? `Idioma alterado para ${language}` 
               : `Language changed to ${language}`}
           </span>
           <button
             onClick={() => setShow(false)}
-            className="ml-2 text-secondary hover:text-white transition-colors"
+            className="ml-2 text-secondary hover:text-primary transition-colors"
           >
             <X size={16} />
           </button>

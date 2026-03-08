@@ -23,7 +23,7 @@ export default function Hero() {
                 >
                     {/* Avatar / Profile Placeholder */}
                     <div className="relative group pb-4 md:pb-5">
-                        <div className="relative z-10 flex items-center justify-center w-24 h-24 md:w-32 md:h-32 overflow-hidden border-2 rounded-full border-white/10">
+                        <div className="relative z-10 flex items-center justify-center w-24 h-24 md:w-32 md:h-32 overflow-hidden border-2 rounded-full border-primary/10">
                             <img
                                 src={profilePic}
                                 alt="Rian Rodrigues"
@@ -31,7 +31,7 @@ export default function Hero() {
                             />
                         </div>
                         {/* Status Badge */}
-                        <div className="absolute px-3 py-1 flex items-center gap-2 text-[10px] md:text-xs font-medium text-white border rounded-full bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-surface border-white/10 whitespace-nowrap z-20 shadow-lg">
+                        <div className="absolute px-3 py-1 flex items-center gap-2 text-[10px] md:text-xs font-medium text-primary border rounded-full bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-surface border-primary/10 whitespace-nowrap z-20 shadow-lg">
                             <span className="relative flex w-2 h-2">
                                 <span className="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-green-500"></span>
                                 <span className="relative inline-flex w-2 h-2 rounded-full bg-green-500"></span>
@@ -42,10 +42,10 @@ export default function Hero() {
 
                     {/* Main Text */}
                     <div className="space-y-4 md:space-y-6 pt-4 md:pt-6">
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-primary leading-tight">
                             Rian Rodrigues
                         </h1>
-                        <p className="text-[10px] md:text-xl px-4 md:px-5 py-2 md:py-2.5 border rounded-full border-white/10 bg-white/5 inline-block text-secondary font-medium tracking-wide">
+                        <p className="text-[10px] md:text-xl px-4 md:px-5 py-2 md:py-2.5 border rounded-full border-primary/10 bg-primary/5 inline-block text-secondary font-medium tracking-wide">
                             Senior Software Engineer
                         </p>
                     </div>
@@ -67,7 +67,7 @@ export default function Hero() {
                                 href={social.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center justify-center gap-2 px-4 md:px-5 py-2.5 text-sm md:text-base transition-all duration-300 border rounded-full border-white/10 bg-white/5 hover:bg-white/10 active:scale-95 md:hover:scale-105 text-white whitespace-nowrap"
+                                className="flex items-center justify-center gap-2 px-4 md:px-5 py-2.5 text-sm md:text-base transition-all duration-300 border rounded-full border-primary/10 bg-primary/5 hover:bg-primary/10 active:scale-95 md:hover:scale-105 text-primary whitespace-nowrap"
                             >
                                 <social.icon size={16} className="shrink-0" />
                                 <span>{social.label}</span>

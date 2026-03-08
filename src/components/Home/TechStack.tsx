@@ -83,20 +83,20 @@ export default function TechStack() {
                     {skills.map((group, index) => (
                         <motion.div
                             key={group.category}
-                            className="bg-surface/50 backdrop-blur-sm border border-white/5 p-6 rounded-2xl hover:border-accent/30 transition-colors"
+                            className="bg-surface/70 backdrop-blur-sm border border-primary/10 p-6 rounded-2xl hover:border-accent/40 transition-colors"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                         >
-                            <h3 className="text-lg font-semibold text-white mb-4 border-b border-white/5 pb-2">
+                            <h3 className="text-lg font-semibold text-primary mb-4 border-b border-primary/10 pb-2">
                                 {group.category}
                             </h3>
                             <div className="flex flex-wrap gap-2">
                                 {group.items.map((skill) => (
                                     <span
                                         key={skill}
-                                        className="px-3 py-1 text-sm bg-white/5 text-secondary rounded-lg border border-white/5 hover:bg-accent/10 hover:text-accent transition-colors cursor-default"
+                                        className="px-3 py-1 text-sm bg-primary/5 text-secondary rounded-lg border border-primary/10 hover:bg-accent/10 hover:text-accent transition-colors cursor-default"
                                     >
                                         {skill}
                                     </span>

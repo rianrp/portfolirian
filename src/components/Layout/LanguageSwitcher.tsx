@@ -23,14 +23,14 @@ export default function LanguageSwitcher() {
         <div className="relative">
             <motion.button
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-accent/50 transition-all duration-300"
+                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary/5 hover:bg-primary/10 border border-primary/10 hover:border-accent/50 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 title="Change language / Mudar idioma"
                 disabled={isLoading}
             >
                 <Languages size={18} className={`text-secondary ${isLoading ? 'animate-pulse' : ''}`} />
-                <span className="text-sm font-medium text-white">
+                <span className="text-sm font-medium text-primary">
                     {currentLang?.short}
                 </span>
             </motion.button>
@@ -49,13 +49,13 @@ export default function LanguageSwitcher() {
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
-                            className="absolute top-full right-0 mt-2 py-2 bg-surface border border-white/10 rounded-lg shadow-xl z-50 min-w-[180px]"
+                            className="absolute top-full right-0 mt-2 py-2 bg-surface border border-primary/10 rounded-lg shadow-xl z-50 min-w-[180px]"
                         >
                             {languages.map((lang) => (
                                 <button
                                     key={lang.code}
                                     onClick={() => handleLanguageChange(lang.code)}
-                                    className={`w-full px-4 py-2 text-left text-sm hover:bg-white/5 transition-colors flex items-center gap-2 ${
+                                    className={`w-full px-4 py-2 text-left text-sm hover:bg-primary/10 transition-colors flex items-center gap-2 ${
                                         language === lang.code 
                                             ? 'text-accent font-medium' 
                                             : 'text-secondary'

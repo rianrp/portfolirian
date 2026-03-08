@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, User, Briefcase, Code2, Mail, Github, Linkedin, Award } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
     const { t } = useTranslation();
@@ -43,14 +44,14 @@ export default function Navbar() {
                 <div className={`
                     w-full px-6 py-4 md:px-6 md:py-3 
                     /* Mobile: Transparent with bottom border */
-                    border-b border-white/5 bg-background/80 backdrop-blur-md
+                    border-b border-primary/10 bg-background/80 backdrop-blur-md
                     /* Desktop: Rounded pill with dark background */
-                    md:border-none md:rounded-full md:border md:border-white/[0.08] 
-                    ${scrolled ? 'md:bg-black/80 md:backdrop-blur-xl md:shadow-xl md:shadow-black/40' : 'md:bg-black/50 md:backdrop-blur-md'}
+                    md:rounded-full md:border md:border-primary/10 
+                    ${scrolled ? 'md:bg-background/90 md:backdrop-blur-xl md:shadow-xl md:shadow-background/30' : 'md:bg-background/70 md:backdrop-blur-md'}
                     flex items-center justify-between md:justify-center gap-8
                 `}>
                     {/* Logo (Mobile Only) */}
-                    <a href="#" className="text-xl font-bold text-white tracking-tighter md:hidden">
+                    <a href="#" className="text-xl font-bold text-primary tracking-tighter md:hidden">
                         RR<span className="text-accent">.</span>
                     </a>
 
@@ -60,7 +61,7 @@ export default function Navbar() {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="relative px-4 py-2 text-sm font-medium text-secondary hover:text-white transition-colors group"
+                                className="relative px-4 py-2 text-sm font-medium text-secondary hover:text-primary transition-colors group"
                             >
                                 <span className="flex items-center gap-2">
                                     <link.icon size={16} />
@@ -72,12 +73,13 @@ export default function Navbar() {
                     </div>
 
                     {/* Social Icons - Desktop */}
-                    <div className="hidden md:flex items-center gap-3 pl-6 border-l border-white/10">
+                    <div className="hidden md:flex items-center gap-3 pl-6 border-l border-primary/10">
+                        <ThemeToggle />
                         <LanguageSwitcher />
-                        <a href="https://github.com/rianrp" target="_blank" rel="noopener noreferrer" className="p-2 text-secondary hover:text-white hover:bg-white/5 rounded-full transition-colors">
+                        <a href="https://github.com/rianrp" target="_blank" rel="noopener noreferrer" className="p-2 text-secondary hover:text-primary hover:bg-primary/10 rounded-full transition-colors">
                             <Github size={18} />
                         </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 text-secondary hover:text-white hover:bg-white/5 rounded-full transition-colors">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 text-secondary hover:text-primary hover:bg-primary/10 rounded-full transition-colors">
                             <Linkedin size={18} />
                         </a>
                     </div>
@@ -86,7 +88,7 @@ export default function Navbar() {
                     <div className="md:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-secondary hover:text-white transition-colors p-1"
+                            className="text-secondary hover:text-primary transition-colors p-1"
                         >
                             {isOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
@@ -101,7 +103,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="fixed top-[65px] left-0 w-full z-40 bg-background/95 backdrop-blur-xl border-b border-white/10 md:hidden overflow-hidden"
+                        className="fixed top-[65px] left-0 w-full z-40 bg-background/95 backdrop-blur-xl border-b border-primary/10 md:hidden overflow-hidden"
                     >
                         {/* Mobile Menu Items - Centered */}
                         <div className="flex flex-col items-center p-6 space-y-6">
@@ -110,7 +112,7 @@ export default function Navbar() {
                                     key={link.name}
                                     href={link.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="flex items-center gap-3 text-lg font-medium text-secondary hover:text-white transition-colors"
+                                    className="flex items-center gap-3 text-lg font-medium text-secondary hover:text-primary transition-colors"
                                 >
                                     <link.icon size={20} className="text-accent" />
                                     {link.name}
@@ -118,15 +120,16 @@ export default function Navbar() {
                             ))}
 
                             {/* Mobile Socials */}
-                            <div className="flex justify-center gap-6 pt-6 border-t border-white/10 w-full max-w-[280px]">
+                            <div className="flex justify-center gap-6 pt-6 border-t border-primary/10 w-full max-w-[280px]">
+                                <ThemeToggle />
                                 <LanguageSwitcher />
-                                <a href="https://github.com/rianrp" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white">
+                                <a href="https://github.com/rianrp" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary">
                                     <Github size={24} />
                                 </a>
-                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white">
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary">
                                     <Linkedin size={24} />
                                 </a>
-                                <a href="mailto:riansatro@gmail.com" className="text-secondary hover:text-white">
+                                <a href="mailto:riansatro@gmail.com" className="text-secondary hover:text-primary">
                                     <Mail size={24} />
                                 </a>
                             </div>

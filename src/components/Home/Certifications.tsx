@@ -101,10 +101,10 @@ export default function Certifications() {
         <Section id="certifications">
             <div className="container px-6 md:px-6 mx-auto">
                 <div className="flex items-end gap-3 md:gap-4 mb-8 md:mb-12">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary">
                         {t('certifications.title')}
                     </h2>
-                    <div className="h-1 flex-1 bg-white/10 mb-2 rounded-full" />
+                    <div className="h-1 flex-1 bg-primary/10 mb-2 rounded-full" />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
@@ -117,7 +117,7 @@ export default function Certifications() {
                             transition={{ delay: index * 0.1 }}
                             className="group relative"
                         >
-                            <div className="relative p-6 rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-accent/50 transition-all duration-300">
+                            <div className="relative p-6 rounded-lg border border-primary/10 bg-primary/5 backdrop-blur-sm hover:bg-primary/10 hover:border-accent/50 transition-all duration-300">
                                 <div className="flex items-start justify-between mb-4">
                                     <div className="p-2 rounded-lg bg-accent/20 text-accent">
                                         <Award size={24} />
@@ -132,13 +132,13 @@ export default function Certifications() {
                                             <ExternalLink size={18} />
                                         </a>
                                     )}
-                                </div>
+                                    </div>
 
-                                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-accent transition-colors">
+                                <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-accent transition-colors">
                                     {cert.title}
                                 </h3>
 
-                                <div className="text-sm font-medium text-white/80 mb-2">
+                                <div className="text-sm font-medium text-primary/80 mb-2">
                                     {cert.issuer}
                                 </div>
 

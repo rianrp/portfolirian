@@ -4,14 +4,15 @@ export default {
         "./index.html",
         "./src/**/*.{js,ts,jsx,tsx}",
     ],
+    darkMode: "class",
     theme: {
         extend: {
             colors: {
-                background: "#000000", // Pure Black
-                surface: "#0a0a0a", // Nearly black for cards
-                primary: "#f8fafc", // White text
-                secondary: "#a1a1aa", // Gray text
-                accent: "#6366f1", // Indigo accent
+                background: "rgb(var(--color-background) / <alpha-value>)",
+                surface: "rgb(var(--color-surface) / <alpha-value>)",
+                primary: "rgb(var(--color-primary) / <alpha-value>)",
+                secondary: "rgb(var(--color-secondary) / <alpha-value>)",
+                accent: "rgb(var(--color-accent) / <alpha-value>)",
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],

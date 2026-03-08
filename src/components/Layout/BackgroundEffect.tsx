@@ -28,7 +28,7 @@ export default function BackgroundEffect() {
             {stars.map((star) => (
                 <motion.div
                     key={`star-${star.id}`}
-                    className="absolute rounded-full bg-white"
+                    className="absolute rounded-full bg-accent"
                     style={{
                         left: `${star.x}%`,
                         top: `${star.y}%`,
@@ -53,7 +53,7 @@ export default function BackgroundEffect() {
             {asteroids.map((asteroid) => (
                 <motion.div
                     key={`asteroid-${asteroid.id}`}
-                    className="absolute rounded-full bg-white/20 blur-[1px]"
+                    className="absolute rounded-full bg-accent/20 blur-[1px]"
                     style={{
                         left: `${asteroid.x}%`,
                         top: `${asteroid.y}%`,

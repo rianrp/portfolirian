@@ -13,13 +13,14 @@ import SEOHead from './components/SEO/SEOHead';
 import LanguageToast from './components/Layout/LanguageToast';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { useLanguageHTMLAttributes, useLanguageAnalytics } from './hooks/useLanguageEffects';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 function AppContent() {
   useLanguageHTMLAttributes();
   useLanguageAnalytics();
 
   return (
-    <div className="relative min-h-screen bg-background text-primary selection:bg-accent/30 selection:text-white">
+    <div className="relative min-h-screen bg-background text-primary selection:bg-accent/30 selection:text-primary">
       <SEOHead />
       <BackgroundEffect />
       <MouseSpotlight />
@@ -40,9 +41,11 @@ function AppContent() {
 
 function App() {
   return (
-    <LanguageProvider>
-      <AppContent />
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
 

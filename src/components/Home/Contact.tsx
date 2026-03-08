@@ -19,12 +19,12 @@ export default function Contact() {
                     viewport={{ once: true }}
                     className="max-w-3xl mx-auto"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full text-accent text-sm font-medium mb-8">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 rounded-full text-accent text-sm font-medium mb-8">
                         <MessageSquare size={16} />
                         <span>{t('contact.badge')}</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight">
+                    <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 tracking-tight">
                         {t('contact.heading')} <br />
                         <span className="text-secondary">{t('contact.headingAccent')}</span>
                     </h2>
@@ -47,7 +47,7 @@ export default function Contact() {
                             href="https://linkedin.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-8 py-4 bg-surface hover:bg-surface/80 text-white rounded-xl font-bold text-lg transition-all duration-300 border border-white/5"
+                            className="px-8 py-4 bg-surface hover:bg-surface/80 text-primary rounded-xl font-bold text-lg transition-all duration-300 border border-primary/10"
                         >
                             {t('contact.linkedinButton')}
                         </a>

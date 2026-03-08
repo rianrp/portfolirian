@@ -7,6 +7,7 @@ import EurOrbit from '../../assets/eurorbit/eurorbit.png';
 import SugarlandTheaters from '../../assets/sugarlandtheaters/sugarland-desktop.png';
 import TileKit from '../../assets/tilekit/land.png';
 import Warhall from '../../assets/warhall/footer.png';
+import lorena from '../../assets/lorena/image.png';
 
 export default function Projects() {
     const { t } = useTranslation();
@@ -42,58 +43,18 @@ export default function Projects() {
             }
         },
         {
-            title: 'WarHall Tournament',
+            title: 'Lorena',
             status: 'Live',
             statusColor: 'bg-green-500',
             date: '2026-01-25',
-            type: 'Tournament Platform',
-            description: 'WarHall is a competitive tournament platform focused on structured events, fair matchmaking, and real rewards. The project centralizes tournament organization by managing registrations, rules, brackets, and match visibility in a single environment. Events follow a classic, competitive format with scheduled fights and official recording of matches published on WarHall’s channels. The platform is designed to eliminate disorganization and provide a professional, transparent experience for both players and organizers.',
-            tags: ['Esports', 'Competitive Gaming', 'Tournaments', 'Community', 'Events'],
-            image: Warhall,
+            type: 'My Client Project',
+            description: `Lorena is a fashion consultancy that offers personalized services to help clients develop their unique style. With a client-centered approach, Lorena works to understand each individual's preferences, needs, and goals, providing services such as wardrobe analysis, personal shopping, and custom outfit creation. The goal is to help clients feel confident and authentic in their fashion choices, building a personal image that reflects their identity and lifestyle.`,
+            tags: ['Fashion', 'Consulting', 'Branding', 'UI/UX', 'Web Design'],
+            image: lorena,
             links: {
-                website: 'https://warhalltournament.pages.dev/',
+                website: 'https://lorenahandradeclass.com/',
             }
-        },
-        {
-            title: 'EurOrbit',
-            status: 'Live',
-            statusColor: 'bg-green-500',
-            date: '2025-12-20',
-            type: 'Website',
-            description: 'Desenvolvi em 4 etapas: (1) Estruturei HTML5 com dropdown de cidades e área de exibição; (2) Estilizei com CSS3 responsivo, gradientes azuis e Grid layout; (3) Programei JavaScript com async/await para chamadas à API, processamento JSON e geração dinâmica de conteúdo; (4) Implementei tratamento de erros, conversão de temperatura e mapeamento de 15 condições climáticas para ícones. Testei em múltiplos dispositivos e validei todas funcionalidades.',
-            tags: ['Web Design', 'React', 'TypeScript', 'Vite', 'Rust'],
-            image: EurOrbit,
-            links: {
-                website: 'https://rianrp.github.io/EurOrbit/',
-                github: 'https://github.com/rianrp/EurOrbit',
-                demo: 'https://rianrp.github.io/EurOrbit/'
-            }
-        },
-        {
-            title: 'Sugarland Theaters',
-            status: 'Live',
-            statusColor: 'bg-green-500',
-            date: '2026-01-10',
-            type: 'Web Application',
-            description:
-                'Plataforma frontend de cinema simulando um sistema real de venda de ingressos. Inclui listagem de filmes, busca e filtros por gênero, páginas de detalhes com trailer, e fluxo completo de seleção de assentos com gerenciamento de estado complexo (disponível, selecionado e ocupado), foco em experiência do usuário e arquitetura de componentes reutilizáveis.',
-            tags: [
-                'React',
-                'JavaScript',
-                'Component-Based Architecture',
-                'State Management',
-                'UI/UX',
-                'Responsive Design',
-                'Web Application',
-                'Frontend Engineering'
-            ],
-            image: SugarlandTheaters,
-            links: {
-                website: 'https://github.com/rianrp/Sugarland-Theaters', // ajuste se necessário
-                github: 'https://rianrp.github.io/Sugarland-Theaters/', // ajuste se necessário
-                demo: 'https://github.com/rianrp/Sugarland-Theaters'
-            }
-        },
+        }
         // {
         //     title: 'WritterBook',
         //     status: 'Coming Soon',
@@ -129,10 +90,10 @@ export default function Projects() {
         <Section id="projects">
             <div className="container px-4 md:px-6 mx-auto">
                 <div className="flex items-center gap-3 md:gap-4 mb-8 md:mb-12">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary">
                         {t('projects.title')} <span className="text-secondary text-lg md:text-2xl font-normal">({projects.length})</span>
                     </h2>
-                    <div className="h-px flex-1 bg-white/10" />
+                    <div className="h-px flex-1 bg-primary/10" />
                 </div>
 
                 <div className="grid gap-6 md:gap-8 md:grid-cols-2">
@@ -143,10 +104,10 @@ export default function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
-                            className="group bg-surface rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 hover:border-white/10 transition-colors"
+                            className="group bg-surface rounded-2xl md:rounded-3xl overflow-hidden border border-primary/10 hover:border-primary/20 transition-colors"
                         >
                             {/* Image Area */}
-                            <div className="aspect-video w-full overflow-hidden bg-white/5 relative">
+                            <div className="aspect-video w-full overflow-hidden bg-primary/5 relative">
                                 <img
                                     src={project.image}
                                     alt={project.title}
@@ -159,15 +120,15 @@ export default function Projects() {
                             <div className="p-5 md:p-8">
                                 <div className="flex flex-col md:flex-row justify-between items-start mb-3 md:mb-4 gap-2 md:gap-0">
                                     <div>
-                                        <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{project.title}</h3>
+                                        <h3 className="text-xl md:text-2xl font-bold text-primary mb-2">{project.title}</h3>
                                         <div className="flex items-center gap-2 text-xs md:text-sm">
                                             <span className={`w-2 h-2 rounded-full ${project.statusColor} animate-pulse`} />
                                             <span className="text-secondary">{project.status}</span>
-                                            <span className="text-white/20">•</span>
+                                            <span className="text-primary/20">•</span>
                                             <span className="text-secondary">{project.date}</span>
                                         </div>
                                     </div>
-                                    <div className="px-2.5 md:px-3 py-1 rounded-full bg-white/5 border border-white/5 text-[10px] md:text-xs font-medium text-secondary whitespace-nowrap">
+                                    <div className="px-2.5 md:px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-[10px] md:text-xs font-medium text-secondary whitespace-nowrap">
                                         {project.type}
                                     </div>
                                 </div>
@@ -178,13 +139,13 @@ export default function Projects() {
 
                                 <div className="flex flex-wrap gap-2 mb-8">
                                     {project.tags.map(tag => (
-                                        <span key={tag} className="px-3 py-1 text-xs font-medium text-white/70 bg-white/5 rounded-md border border-white/5">
+                                        <span key={tag} className="px-3 py-1 text-xs font-medium text-primary/70 bg-primary/5 rounded-md border border-primary/10">
                                             {tag}
                                         </span>
                                     ))}
                                 </div>
 
-                                <div className="flex items-center gap-6 pt-6 border-t border-white/5">
+                                <div className="flex items-center gap-6 pt-6 border-t border-primary/10">
                                     {project.links.website && (
                                         <a href={project.links.website} className="flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors">
                                             <ExternalLink size={18} />
@@ -192,13 +153,13 @@ export default function Projects() {
                                         </a>
                                     )}
                                     {project.links.github && (
-                                        <a href={project.links.github} className="flex items-center gap-2 text-secondary hover:text-white transition-colors">
+                                        <a href={project.links.github} className="flex items-center gap-2 text-secondary hover:text-primary transition-colors">
                                             <Github size={18} />
                                             {t('projects.source')}
                                         </a>
                                     )}
                                     {project.links.demo && (
-                                        <a href={project.links.demo} className="flex items-center gap-2 text-secondary hover:text-white transition-colors">
+                                        <a href={project.links.demo} className="flex items-center gap-2 text-secondary hover:text-primary transition-colors">
                                             <Play size={18} />
                                             {t('projects.demo')}
                                         </a>
@@ -210,7 +171,7 @@ export default function Projects() {
                 </div>
 
                 <div className="mt-12 text-center">
-                    <a href="https://github.com/rianrp" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-white transition-colors">
+                    <a href="https://github.com/rianrp" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-primary transition-colors">
                         {t('projects.viewAll')} <ArrowRight size={18} />
                     </a>
                 </div>
