@@ -3,11 +3,10 @@ import { ExternalLink, Github, Play, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Section from '../Layout/Section';
 import inspiraviewImage from '../../assets/inspiraview/image1.png';
-import EurOrbit from '../../assets/eurorbit/eurorbit.png';
-import SugarlandTheaters from '../../assets/sugarlandtheaters/sugarland-desktop.png';
 import TileKit from '../../assets/tilekit/land.png';
-import Warhall from '../../assets/warhall/footer.png';
 import lorena from '../../assets/lorena/image.png';
+import onixMatcha from '../../assets/onixmatcha/image.png';
+import helixq from '../../assets/helixq/helixq.png';
 
 export default function Projects() {
     const { t } = useTranslation();
@@ -28,18 +27,16 @@ export default function Projects() {
             }
         },
         {
-            title: 'Tilekit',
+            title: 'HelixQ',
             status: 'Live',
             statusColor: 'bg-green-500',
-            date: '2026-01-25',
-            type: 'Developer Tool',
-            description: 'Tilekit is a web-based tile map editor combined with a Phaser integration library. The project was developed in stages: (1) creation of a lightweight canvas-based editor focused on grid precision and ease of use; (2) definition of a simple, explicit JSON map format optimized for runtime usage; (3) development of a Phaser helper library that loads maps with rendering, layers, collisions, and world bounds using a single function; (4) publishing the library as an npm package with TypeScript support and clear documentation. The tool is designed to eliminate complex pipelines and provide a predictable map-to-engine workflow.',
-            tags: ['Game Development', 'Phaser', 'TypeScript', 'Canvas', 'Vite', 'npm', 'Open Source'],
-            image: TileKit,
+            date: '2024-12-20',
+            type: 'Desktop App',
+            description: 'Infinite canvas moodboard for creatives. Organize references, ideas and notes in a distraction-free space. Features drag & drop images, sticky notes, filters, guides, and always-on-top mode.',
+            tags: ['Tauri', 'React', 'TypeScript', 'Vite', 'Rust'],
+            image: helixq,
             links: {
-                website: 'https://tilekit.pages.dev', // se ainda não tiver, pode comentar
-                github: 'https://github.com/rianrp/tilekitphaser',
-                demo: 'https://www.npmjs.com/package/@devince/tilekit-phaser'
+                website: 'https://helixq.com.br/',
             }
         },
         {
@@ -54,7 +51,35 @@ export default function Projects() {
             links: {
                 website: 'https://lorenahandradeclass.com/',
             }
-        }
+        },
+        {
+            title: 'Onix Matcha',
+            status: 'Live',
+            statusColor: 'bg-green-500',
+            date: '2026-01-25',
+            type: 'My Client Project',
+            description: `Onix Matcha is a premium matcha brand that offers high-quality, organic matcha products. With a focus on health and wellness, Onix Matcha provides a range of matcha powders, accessories, and recipes to help customers incorporate matcha into their daily routines. The brand emphasizes sustainability, quality, and the traditional Japanese tea ceremony experience.`,
+            tags: ['Health', 'Wellness', 'Branding', 'UI/UX', 'Web Design'],
+            image: onixMatcha,
+            links: {
+                website: 'https://coffeandtea.netlify.app/',
+            }
+        },
+        {
+            title: 'Tilekit',
+            status: 'Live',
+            statusColor: 'bg-green-500',
+            date: '2026-01-25',
+            type: 'Developer Tool',
+            description: 'Tilekit is a web-based tile map editor combined with a Phaser integration library. The project was developed in stages: (1) creation of a lightweight canvas-based editor focused on grid precision and ease of use; (2) definition of a simple, explicit JSON map format optimized for runtime usage; (3) development of a Phaser helper library that loads maps with rendering, layers, collisions, and world bounds using a single function; (4) publishing the library as an npm package with TypeScript support and clear documentation. The tool is designed to eliminate complex pipelines and provide a predictable map-to-engine workflow.',
+            tags: ['Game Development', 'Phaser', 'TypeScript', 'Canvas', 'Vite', 'npm', 'Open Source'],
+            image: TileKit,
+            links: {
+                website: 'https://tilekit.pages.dev', // se ainda não tiver, pode comentar
+                github: 'https://github.com/rianrp/tilekitphaser',
+                demo: 'https://www.npmjs.com/package/@devince/tilekit-phaser'
+            }
+        },
         // {
         //     title: 'WritterBook',
         //     status: 'Coming Soon',
