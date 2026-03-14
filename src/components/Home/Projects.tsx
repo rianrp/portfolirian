@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Play, ArrowRight } from 'lucide-react';
+import { Github, ArrowUpRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Section from '../Layout/Section';
 import inspiraviewImage from '../../assets/inspiraview/image1.png';
@@ -13,40 +13,27 @@ export default function Projects() {
     const projects = [
         {
             title: 'InspiraView',
-            status: 'Live',
-            statusColor: 'bg-green-500',
-            date: '2024-12-20',
-            type: 'Desktop App',
-            description: 'Infinite canvas moodboard for creatives. Organize references, ideas and notes in a distraction-free space. Features drag & drop images, sticky notes, filters, guides, and always-on-top mode.',
-            tags: ['Tauri', 'React', 'TypeScript', 'Vite', 'Rust'],
+            description: 'Infinite canvas moodboard for creatives. Organize references, ideas and notes in a distraction-free space.',
+            tags: ['Tauri', 'React', 'TypeScript', 'Rust'],
             image: inspiraviewImage,
             links: {
                 website: 'https://inspiraview.netlify.app/',
                 github: 'https://github.com/rianrp/Inspiraview',
-                demo: 'https://inspiraview.netlify.app/'
             }
         },
         {
             title: 'HelixQ',
-            status: 'Live',
-            statusColor: 'bg-green-500',
-            date: '2024-12-20',
-            type: 'Desktop App',
-            description: 'Infinite canvas moodboard for creatives. Organize references, ideas and notes in a distraction-free space. Features drag & drop images, sticky notes, filters, guides, and always-on-top mode.',
-            tags: ['Tauri', 'React', 'TypeScript', 'Vite', 'Rust'],
+            description: 'Professional platform for therapists to manage appointments, patient records, and therapy sessions.',
+            tags: ['React', 'TypeScript', 'Tailwind'],
             image: helixq,
             links: {
                 website: 'https://helixq.com.br/',
             }
         },
         {
-            title: 'Lorena',
-            status: 'Live',
-            statusColor: 'bg-green-500',
-            date: '2026-01-25',
-            type: 'My Client Project',
-            description: `Lorena is a fashion consultancy that offers personalized services to help clients develop their unique style. With a client-centered approach, Lorena works to understand each individual's preferences, needs, and goals, providing services such as wardrobe analysis, personal shopping, and custom outfit creation. The goal is to help clients feel confident and authentic in their fashion choices, building a personal image that reflects their identity and lifestyle.`,
-            tags: ['Fashion', 'Consulting', 'Branding', 'UI/UX', 'Web Design'],
+            title: 'Lorena Consultoria',
+            description: 'Fashion consultancy offering personalized styling services, wardrobe analysis, and custom outfit creation.',
+            tags: ['React', 'UI/UX', 'Responsive'],
             image: lorena,
             links: {
                 website: 'https://lorenahandradeclass.com/',
@@ -54,12 +41,8 @@ export default function Projects() {
         },
         {
             title: 'Onix Matcha',
-            status: 'Live',
-            statusColor: 'bg-green-500',
-            date: '2026-01-25',
-            type: 'My Client Project',
-            description: `Onix Matcha is a premium matcha brand that offers high-quality, organic matcha products. With a focus on health and wellness, Onix Matcha provides a range of matcha powders, accessories, and recipes to help customers incorporate matcha into their daily routines. The brand emphasizes sustainability, quality, and the traditional Japanese tea ceremony experience.`,
-            tags: ['Health', 'Wellness', 'Branding', 'UI/UX', 'Web Design'],
+            description: 'E-commerce platform for premium matcha products with brand storytelling and health content.',
+            tags: ['React', 'E-commerce', 'Branding'],
             image: onixMatcha,
             links: {
                 website: 'https://coffeandtea.netlify.app/',
@@ -67,17 +50,12 @@ export default function Projects() {
         },
         {
             title: 'Tilekit',
-            status: 'Live',
-            statusColor: 'bg-green-500',
-            date: '2026-01-25',
-            type: 'Developer Tool',
-            description: 'Tilekit is a web-based tile map editor combined with a Phaser integration library. The project was developed in stages: (1) creation of a lightweight canvas-based editor focused on grid precision and ease of use; (2) definition of a simple, explicit JSON map format optimized for runtime usage; (3) development of a Phaser helper library that loads maps with rendering, layers, collisions, and world bounds using a single function; (4) publishing the library as an npm package with TypeScript support and clear documentation. The tool is designed to eliminate complex pipelines and provide a predictable map-to-engine workflow.',
-            tags: ['Game Development', 'Phaser', 'TypeScript', 'Canvas', 'Vite', 'npm', 'Open Source'],
+            description: 'Web-based tile map editor with Phaser integration. Published as npm package with TypeScript support.',
+            tags: ['Phaser', 'TypeScript', 'npm'],
             image: TileKit,
             links: {
-                website: 'https://tilekit.pages.dev', // se ainda não tiver, pode comentar
+                website: 'https://tilekit.pages.dev',
                 github: 'https://github.com/rianrp/tilekitphaser',
-                demo: 'https://www.npmjs.com/package/@devince/tilekit-phaser'
             }
         },
         // {
@@ -113,93 +91,114 @@ export default function Projects() {
 
     return (
         <Section id="projects">
-            <div className="container px-4 md:px-6 mx-auto">
-                <div className="flex items-center gap-3 md:gap-4 mb-8 md:mb-12">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary">
-                        {t('projects.title')} <span className="text-secondary text-lg md:text-2xl font-normal">({projects.length})</span>
+            <div className="container px-4 md:px-6 mx-auto max-w-7xl">
+                {/* Header */}
+                <div className="mb-16 md:mb-20">
+                    <h2 className="text-3xl md:text-5xl font-display font-bold text-primary mb-3">
+                        {t('projects.title')}
                     </h2>
-                    <div className="h-px flex-1 bg-primary/10" />
+                    <p className="text-lg text-secondary max-w-2xl">
+                        Selected projects I've worked on
+                    </p>
                 </div>
 
-                <div className="grid gap-6 md:gap-8 md:grid-cols-2">
+                {/* Projects Grid */}
+                <div className="space-y-24 md:space-y-32">
                     {projects.map((project, index) => (
-                        <motion.div
+                        <motion.article
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.2 }}
-                            className="group bg-surface rounded-2xl md:rounded-3xl overflow-hidden border border-primary/10 hover:border-primary/20 transition-colors"
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                            className="group"
                         >
-                            {/* Image Area */}
-                            <div className="aspect-video w-full overflow-hidden bg-primary/5 relative">
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60" />
-                            </div>
-
-                            {/* Content Area */}
-                            <div className="p-5 md:p-8">
-                                <div className="flex flex-col md:flex-row justify-between items-start mb-3 md:mb-4 gap-2 md:gap-0">
-                                    <div>
-                                        <h3 className="text-xl md:text-2xl font-bold text-primary mb-2">{project.title}</h3>
-                                        <div className="flex items-center gap-2 text-xs md:text-sm">
-                                            <span className={`w-2 h-2 rounded-full ${project.statusColor} animate-pulse`} />
-                                            <span className="text-secondary">{project.status}</span>
-                                            <span className="text-primary/20">•</span>
-                                            <span className="text-secondary">{project.date}</span>
-                                        </div>
+                            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                                {/* Image */}
+                                <a 
+                                    href={project.links.website}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`relative overflow-hidden rounded-lg ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}
+                                >
+                                    <div className="aspect-[4/3] bg-surface">
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                                        />
                                     </div>
-                                    <div className="px-2.5 md:px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-[10px] md:text-xs font-medium text-secondary whitespace-nowrap">
-                                        {project.type}
+                                </a>
+
+                                {/* Content */}
+                                <div className={index % 2 === 0 ? 'md:order-2' : 'md:order-1'}>
+                                    <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary mb-4 group-hover:text-accent transition-colors">
+                                        {project.title}
+                                    </h3>
+                                    
+                                    <p className="text-base md:text-lg text-secondary leading-relaxed mb-6">
+                                        {project.description}
+                                    </p>
+
+                                    {/* Tags */}
+                                    <div className="flex flex-wrap gap-2 mb-8">
+                                        {project.tags.map(tag => (
+                                            <span 
+                                                key={tag} 
+                                                className="px-3 py-1.5 text-sm text-secondary bg-surface rounded-full border border-primary/10"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    {/* Links */}
+                                    <div className="flex items-center gap-4">
+                                        <a
+                                            href={project.links.website}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-heading font-semibold transition-colors group/link"
+                                        >
+                                            Visit site
+                                            <ArrowUpRight size={18} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                                        </a>
+                                        
+                                        {project.links.github && (
+                                            <a
+                                                href={project.links.github}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-2 text-secondary hover:text-primary font-medium transition-colors"
+                                            >
+                                                <Github size={18} />
+                                                View code
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
-
-                                <p className="text-sm md:text-base text-secondary leading-relaxed mb-5 md:mb-6 line-clamp-3">
-                                    {project.description}
-                                </p>
-
-                                <div className="flex flex-wrap gap-2 mb-8">
-                                    {project.tags.map(tag => (
-                                        <span key={tag} className="px-3 py-1 text-xs font-medium text-primary/70 bg-primary/5 rounded-md border border-primary/10">
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                <div className="flex items-center gap-6 pt-6 border-t border-primary/10">
-                                    {project.links.website && (
-                                        <a href={project.links.website} className="flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors">
-                                            <ExternalLink size={18} />
-                                            {t('projects.website')}
-                                        </a>
-                                    )}
-                                    {project.links.github && (
-                                        <a href={project.links.github} className="flex items-center gap-2 text-secondary hover:text-primary transition-colors">
-                                            <Github size={18} />
-                                            {t('projects.source')}
-                                        </a>
-                                    )}
-                                    {project.links.demo && (
-                                        <a href={project.links.demo} className="flex items-center gap-2 text-secondary hover:text-primary transition-colors">
-                                            <Play size={18} />
-                                            {t('projects.demo')}
-                                        </a>
-                                    )}
-                                </div>
                             </div>
-                        </motion.div>
+                        </motion.article>
                     ))}
                 </div>
 
-                <div className="mt-12 text-center">
-                    <a href="https://github.com/rianrp" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-primary transition-colors">
-                        {t('projects.viewAll')} <ArrowRight size={18} />
+                {/* Footer CTA */}
+                <motion.div 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="mt-24 text-center"
+                >
+                    <a 
+                        href="https://github.com/rianrp" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="inline-flex items-center gap-2 text-secondary hover:text-primary transition-colors font-heading font-medium group/more"
+                    >
+                        View more on GitHub
+                        <ArrowUpRight size={18} className="group-hover/more:translate-x-0.5 group-hover/more:-translate-y-0.5 transition-transform" />
                     </a>
-                </div>
+                </motion.div>
             </div>
         </Section>
     );

@@ -1,9 +1,13 @@
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { useRef } from 'react';
 import Section from '../Layout/Section';
 
 export default function TechStack() {
     const { t } = useTranslation();
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
+
     const skills = [
         {
             category: "Frontend",
@@ -11,14 +15,14 @@ export default function TechStack() {
                 "React",
                 "Next.js",
                 "TypeScript",
-                "Tailwind",
+                "Tailwind CSS",
                 "Material UI",
                 "React Native",
                 "Zustand",
                 "Redux Toolkit",
                 "Storybook",
                 "Framer Motion",
-                "E2E Testing (Playwright)"
+                "E2E Testing"
             ]
         },
         {
@@ -55,11 +59,11 @@ export default function TechStack() {
         {
             category: "Architecture",
             items: [
-                "Clean Arch",
+                "Clean Architecture",
                 "SOLID",
                 "Design Patterns",
                 "Microservices",
-                "Monorepo (Nx/Turborepo)",
+                "Monorepo",
                 "CI/CD",
                 "Docker",
                 "Cloud (AWS/Azure)",
@@ -71,37 +75,55 @@ export default function TechStack() {
 
     return (
         <Section>
-            <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('techStack.title')} <span className="text-accent">{t('techStack.titleAccent')}</span></h2>
-                    <p className="text-secondary max-w-2xl mx-auto">
+            <div className="container mx-auto px-6" ref={ref}>
+                {/* Header minimalista */}
+                <motion.div 
+                    className="max-w-4xl mb-20"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6 }}
+                >
+                    <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-primary mb-6 leading-tight">
+                        {t('techStack.title')}{' '}
+                        <span className="text-accent">{t('techStack.titleAccent')}</span>
+                    </h2>
+                    <p className="text-xl md:text-2xl text-secondary leading-relaxed">
                         {t('techStack.subtitle')}
                     </p>
-                </div>
+                </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {skills.map((group, index) => (
+                {/* Layout em grid de 2 colunas - estilo Google clean */}
+                <div className="grid md:grid-cols-2 gap-x-20 gap-y-16 max-w-6xl">
+                    {skills.map((group, groupIndex) => (
                         <motion.div
                             key={group.category}
-                            className="bg-surface/70 backdrop-blur-sm border border-primary/10 p-6 rounded-2xl hover:border-accent/40 transition-colors"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ delay: groupIndex * 0.1, duration: 0.6 }}
                         >
-                            <h3 className="text-lg font-semibold text-primary mb-4 border-b border-primary/10 pb-2">
+                            {/* Título da categoria */}
+                            <h3 className="text-3xl md:text-4xl font-display font-bold text-primary mb-8">
                                 {group.category}
                             </h3>
-                            <div className="flex flex-wrap gap-2">
-                                {group.items.map((skill) => (
-                                    <span
+                            
+                            {/* Lista simples e clean */}
+                            <ul className="space-y-4">
+                                {group.items.map((skill, skillIndex) => (
+                                    <motion.li
                                         key={skill}
-                                        className="px-3 py-1 text-sm bg-primary/5 text-secondary rounded-lg border border-primary/10 hover:bg-accent/10 hover:text-accent transition-colors cursor-default"
+                                        className="text-lg md:text-xl text-secondary hover:text-primary transition-colors duration-200 flex items-start gap-3 group"
+                                        initial={{ opacity: 0, x: -10 }}
+                                        animate={isInView ? { opacity: 1, x: 0 } : {}}
+                                        transition={{ 
+                                            delay: groupIndex * 0.1 + skillIndex * 0.05,
+                                            duration: 0.4 
+                                        }}
                                     >
-                                        {skill}
-                                    </span>
+                                        <span className="text-accent mt-1.5 text-sm group-hover:scale-125 transition-transform">•</span>
+                                        <span className="font-medium">{skill}</span>
+                                    </motion.li>
                                 ))}
-                            </div>
+                            </ul>
                         </motion.div>
                     ))}
                 </div>
@@ -109,3 +131,4 @@ export default function TechStack() {
         </Section>
     );
 }
+

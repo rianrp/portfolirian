@@ -3,12 +3,23 @@
 @tailwind utilities;
 
 :root {
+    color-scheme: light;
+    --color-background: 248 250 252;
+    --color-surface: 255 255 255;
+    --color-primary: 15 23 42;
+    --color-secondary: 71 85 105;
+    --color-accent: 99 102 241;
+    --color-miles-red: 220 38 38;
+}
+
+[data-theme="dark"] {
     color-scheme: dark;
     --color-background: 0 0 0;
     --color-surface: 10 10 10;
     --color-primary: 248 250 252;
     --color-secondary: 161 161 170;
     --color-accent: 99 102 241;
+    --color-miles-red: 220 38 38;
 }
 
 [data-theme="light"] {
@@ -18,6 +29,7 @@
     --color-primary: 15 23 42;
     --color-secondary: 71 85 105;
     --color-accent: 99 102 241;
+    --color-miles-red: 220 38 38;
 }
 
 body {
@@ -26,9 +38,9 @@ body {
     transition: background-color 200ms ease, color 200ms ease;
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Miles Morales thin style */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -36,22 +48,165 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-surface rounded-full;
-    border: 2px solid rgb(var(--color-background));
+    background: rgb(var(--color-accent));
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    @apply bg-secondary/40;
+    background: rgb(var(--color-miles-red));
+}
+
+/* ========================
+   MILES MORALES EFFECTS
+   ======================== */
+
+/* Glitch Text Effect */
+@keyframes glitch-1 {
+    0%, 100% { clip-path: inset(0 0 96% 0); transform: translate(-2px, 2px); }
+    10% { clip-path: inset(30% 0 50% 0); transform: translate(2px, -1px); }
+    20% { clip-path: inset(60% 0 20% 0); transform: translate(-1px, 1px); }
+    30% { clip-path: inset(10% 0 70% 0); transform: translate(1px, -2px); }
+    40% { clip-path: inset(80% 0 5% 0); transform: translate(-2px, 0px); }
+    50% { clip-path: inset(45% 0 40% 0); transform: translate(0px, 2px); }
+    60% { clip-path: inset(5% 0 85% 0); transform: translate(2px, -1px); }
+    70% { clip-path: inset(70% 0 10% 0); transform: translate(-1px, 1px); }
+    80% { clip-path: inset(20% 0 60% 0); transform: translate(1px, 0px); }
+    90% { clip-path: inset(90% 0 2% 0); transform: translate(-2px, -1px); }
+}
+
+@keyframes glitch-2 {
+    0%, 100% { clip-path: inset(96% 0 0 0); transform: translate(2px, -2px); }
+    10% { clip-path: inset(50% 0 30% 0); transform: translate(-2px, 1px); }
+    20% { clip-path: inset(20% 0 60% 0); transform: translate(1px, -1px); }
+    30% { clip-path: inset(70% 0 10% 0); transform: translate(-1px, 2px); }
+    40% { clip-path: inset(5% 0 80% 0); transform: translate(2px, 0px); }
+    50% { clip-path: inset(40% 0 45% 0); transform: translate(0px, -2px); }
+    60% { clip-path: inset(85% 0 5% 0); transform: translate(-2px, 1px); }
+    70% { clip-path: inset(10% 0 70% 0); transform: translate(1px, -1px); }
+    80% { clip-path: inset(60% 0 20% 0); transform: translate(-1px, 0px); }
+    90% { clip-path: inset(2% 0 90% 0); transform: translate(2px, 1px); }
+}
+
+.glitch-text {
+    position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-text::before {
+    color: rgb(var(--color-miles-red));
+    animation: glitch-1 3s infinite linear alternate-reverse;
+    z-index: -1;
+}
+
+.glitch-text::after {
+    color: rgb(var(--color-accent));
+    animation: glitch-2 3s infinite linear alternate-reverse;
+    z-index: -1;
+}
+
+/* Chromatic Aberration Hover */
+.chromatic-hover:hover {
+    text-shadow:
+        -2px 0 rgb(var(--color-miles-red)),
+        2px 0 rgb(var(--color-accent));
+}
+
+/* Scan Line Effect */
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
+
+.scanline::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(var(--color-accent), 0.15),
+        transparent
+    );
+    animation: scanline 6s linear infinite;
+    pointer-events: none;
+    z-index: 50;
+}
+
+/* Noise overlay */
+@keyframes noise {
+    0%, 100% { background-position: 0 0; }
+    10% { background-position: -5% -10%; }
+    20% { background-position: -15% 5%; }
+    30% { background-position: 7% -25%; }
+    40% { background-position: 20% 25%; }
+    50% { background-position: -25% 10%; }
+    60% { background-position: 15% 5%; }
+    70% { background-position: 0% 15%; }
+    80% { background-position: 25% 35%; }
+    90% { background-position: -10% 10%; }
+}
+
+/* Fade-in stagger for text reveals */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px) skewY(2deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) skewY(0);
+    }
+}
+
+.slide-up {
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slide-up-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.slide-up-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.slide-up-delay-3 { animation-delay: 0.35s; opacity: 0; }
+.slide-up-delay-4 { animation-delay: 0.5s; opacity: 0; }
+
+/* Shimmer effect for progress bars */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.animate-shimmer {
+    animation: shimmer 2s infinite;
 }
 
 /* Base Heading Styles */
-h1,
-h2,
+h1 {
+    @apply font-display font-bold tracking-tight text-primary;
+}
+
+h2 {
+    @apply font-heading font-bold tracking-tight text-primary;
+}
+
 h3,
 h4,
 h5,
 h6 {
-    @apply font-bold tracking-tight text-primary;
+    @apply font-heading font-semibold tracking-tight text-primary;
 }
 
 p {

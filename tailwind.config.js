@@ -13,9 +13,13 @@ export default {
                 primary: "rgb(var(--color-primary) / <alpha-value>)",
                 secondary: "rgb(var(--color-secondary) / <alpha-value>)",
                 accent: "rgb(var(--color-accent) / <alpha-value>)",
+                miles: "rgb(var(--color-miles-red) / <alpha-value>)",
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
+                display: ['Sora', 'sans-serif'],
+                heading: ['Plus Jakarta Sans', 'sans-serif'],
+                mono: ['JetBrains Mono', 'monospace'],
             },
         },
         container: {
