@@ -4,22 +4,32 @@ export default {
         "./index.html",
         "./src/**/*.{js,ts,jsx,tsx}",
     ],
-    darkMode: "class",
     theme: {
         extend: {
             colors: {
-                background: "rgb(var(--color-background) / <alpha-value>)",
-                surface: "rgb(var(--color-surface) / <alpha-value>)",
-                primary: "rgb(var(--color-primary) / <alpha-value>)",
-                secondary: "rgb(var(--color-secondary) / <alpha-value>)",
-                accent: "rgb(var(--color-accent) / <alpha-value>)",
-                miles: "rgb(var(--color-miles-red) / <alpha-value>)",
+                ink: '#0a0a0a',
+                'ink-soft': '#1a1a1a',
+                paper: '#ffffff',
+                neo: '#f1f1ec',
+                'neo-blue': '#2563ff',
+                'neo-blue-deep': '#1747c4',
+                'neo-yellow': '#ffd84d',
+                'neo-pink': '#ff5a8a',
+                'neo-green': '#4ade80',
             },
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-                display: ['Sora', 'sans-serif'],
-                heading: ['Plus Jakarta Sans', 'sans-serif'],
-                mono: ['JetBrains Mono', 'monospace'],
+                display: ['"Bagel Fat One"', 'cursive'],
+                sans: ['Nunito', 'sans-serif'],
+                mono: ['"JetBrains Mono"', 'monospace'],
+            },
+            boxShadow: {
+                'brut-sm': '3px 3px 0 #0a0a0a',
+                'brut': '6px 6px 0 #0a0a0a',
+                'brut-lg': '10px 10px 0 #0a0a0a',
+            },
+            borderWidth: {
+                '3': '3px',
+                '4': '4px',
             },
         },
         container: {
@@ -30,7 +40,7 @@ export default {
                 md: "768px",
                 lg: "1024px",
                 xl: "1280px",
-                "2xl": "1280px", // Cap max width
+                "2xl": "1280px",
             },
         },
     },

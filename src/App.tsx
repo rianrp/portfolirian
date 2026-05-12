@@ -1,48 +1,28 @@
 import Navbar from './components/Layout/Navbar';
 import Footer from './components/Layout/Footer';
 import Hero from './components/Home/Hero';
-import Experience from './components/Home/Experience';
+import Services from './components/Home/Services';
 import TechStack from './components/Home/TechStack';
 import Contact from './components/Home/Contact';
 import Projects from './components/Home/Projects';
-import Certifications from './components/Home/Certifications';
-import SEOHead from './components/SEO/SEOHead';
-import LanguageToast from './components/Layout/LanguageToast';
-import { LanguageProvider } from './contexts/LanguageContext';
-import { useLanguageHTMLAttributes, useLanguageAnalytics } from './hooks/useLanguageEffects';
-import { ThemeProvider } from './contexts/ThemeContext';
-
-function AppContent() {
-  useLanguageHTMLAttributes();
-  useLanguageAnalytics();
-
-  return (
-    <div className="relative min-h-screen bg-background text-primary selection:bg-accent/30 selection:text-primary">
-      <SEOHead />
-      <Navbar />
-      <LanguageToast />
-      <main className="relative z-10">
-        <Hero />
-        <div className="relative z-20 bg-background">
-          <Projects />
-          <Experience />
-          <TechStack />
-          <Certifications />
-          <Contact />
-        </div>
-      </main>
-      <Footer />
-    </div>
-  );
-}
+import About from './components/Home/About';
+import FAQ from './components/Home/FAQ';
 
 function App() {
   return (
-    <ThemeProvider>
-      <LanguageProvider>
-        <AppContent />
-      </LanguageProvider>
-    </ThemeProvider>
+    <div className="min-h-screen bg-neo text-ink">
+      <Navbar />
+      <main>
+        <Hero />
+        <Services />
+        <Projects />
+        <TechStack />
+        <About />
+        <FAQ />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   );
 }
 
