@@ -36,7 +36,7 @@ export default function Navbar() {
                 <div className="flex items-center gap-3">
                     <a
                         href="#contato"
-                        className="bg-ink text-paper rounded-full px-4 py-2 font-black text-[13px] uppercase border-2 border-ink hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[3px_3px_0_#2563ff] transition-all no-underline"
+                        className="hidden md:inline-block bg-ink text-paper rounded-full px-4 py-2 font-black text-[13px] uppercase border-2 border-ink hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[3px_3px_0_#2563ff] transition-all no-underline"
                     >
                         Bora Conversar →
                     </a>
