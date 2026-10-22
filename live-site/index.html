@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow"><title>Rian Rodrigues — Frontend &amp; Full Stack</title>
+<link rel="stylesheet" href="/fonts.css"><link rel="stylesheet" href="/reference.css"><link rel="stylesheet" href="/study.css">
+<meta name="description" content="Rian Rodrigues. Frontend and full-stack development. Explore Dropboox, HelixQ, Vexus AI, Aivaro, and RavorAI."><link rel="canonical" href="https://riandevince.com/"><meta property="og:title" content="Rian Rodrigues — Frontend &amp; Full Stack"><meta property="og:description" content="End-to-end product development. From idea to market, with a focus on sales and revenue."><meta property="og:url" content="https://riandevince.com/"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><script type="importmap">{"imports":{"three":"/miles/vendor/three.module.js"}}</script><link rel="stylesheet" href="/lower.css"></head><body><div class="page-wrapper" id="top"><div class="global-styles w-embed"><style>
+
+/* Make text look crisper and more legible in all browsers */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Focus state style for keyboard navigation for the focusable elements */
+*[tabindex]:focus-visible,
+  input[type="file"]:focus-visible {
+   outline: 0.125rem solid #4d65ff;
+   outline-offset: 0.125rem;
+}
+
+/* Set color style to inherit */
+.inherit-color * {
+    color: inherit;
+}
+
+/* Get rid of top margin on first element in any rich text element */
+.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+  margin-top: 0 !important;
+}
+
+/* Get rid of bottom margin on last element in any rich text element */
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+	margin-bottom: 0 !important;
+}
+
+
+/* Make sure containers never lose their center alignment */
+.container-medium,.container-small, .container-large {
+	margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+/* 
+Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+Uncomment this CSS to use it in the project. Leave this message for future hand-off.
+*/
+/*
+a,
+.w-input,
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-dropdown-btn,
+.w-dropdown-toggle,
+.w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+*/
+
+/* Apply "..." after 3 lines of text */
+.text-style-3lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+/* Apply "..." after 2 lines of text */
+.text-style-2lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+/* These classes are never overwritten */
+.hide {
+  display: none !important;
+}
+
+@media screen and (max-width: 991px) {
+    .hide, .hide-tablet {
+        display: none !important;
+    }
+}
+  @media screen and (max-width: 767px) {
+    .hide-mobile-landscape{
+      display: none !important;
+    }
+}
+  @media screen and (max-width: 479px) {
+    .hide-mobile{
+      display: none !important;
+    }
+}
+ 
+.margin-0 {
+  margin: 0rem !important;
+}
+  
+.padding-0 {
+  padding: 0rem !important;
+}
+
+.spacing-clean {
+padding: 0rem !important;
+margin: 0rem !important;
+}
+
+.margin-top {
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-top {
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+  
+.margin-right {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-right {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+.margin-bottom {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-bottom {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+.margin-left {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+  
+.padding-left {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+  
+.margin-horizontal {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+
+.padding-horizontal {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+
+.margin-vertical {
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+  
+.padding-vertical {
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+</style></div><div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav"><div class="padding-global"><div class="container-large navbar-container"><a href="#top" aria-current="page" class="brand-wrapper w-nav-brand w--current" aria-label="Rian Rodrigues — home"><span class="rian-wordmark">Rian Rodrigues<span class="brand-dot">.</span></span></a><nav role="navigation" class="navigation hide w-nav-menu"><a href="#work" class="nav-link w-nav-link">Work</a><a href="#work" class="nav-link w-nav-link">Portfolio</a><a href="#about" class="nav-link w-nav-link">About Me</a><div class="mobile-button-wrapper"><a data-w-id="48e9a5d4-4196-a308-0647-30e200f3fd6b" href="#" class="button w-inline-block"><div>Let’s talk</div><img src="/assets/e01982dd2691a952.svg" loading="lazy" style="width: 0rem; height: 2rem;" alt="" class="button-icon"></a></div></nav><a data-w-id="f35e9257-3568-cdfa-25a1-ab92cfba71e1" href="mailto:riansatro@gmail.com" class="button special-button w-inline-block"><div>Let’s talk</div><img src="/assets/e01982dd2691a952.svg" loading="lazy" style="width: 0rem; height: 2rem;" alt="" class="button-icon"></a><div class="menu-button hide w-nav-button" style="-webkit-user-select: text;" aria-label="menu" role="button" tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false"><div class="menu-icon w-icon-nav-menu"></div></div></div></div><div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div></div><main class="main-wrapper"><div class="secion-hero"><div class="padding-global"><div class="container-large"><div class="hero-content-wrapper"><div class="top-line"><p>Hi, I’m Rian Rodrigues. Software developer.</p></div><div class="heading-wrapper"><h1 data-w-id="90de74fa-b0ba-89a6-487e-0fc8ee3bac19">Frontend &amp;</h1><div class="text-image hero-outline">Full stack</div></div><button class="hero-image miles-interactive" type="button" aria-label="Interactive Miles Morales. Move your mouse for him to follow. Click or press Space to shoot a web."><img class="miles-fallback" src="/assets/miles-morales.png" alt="" data-w-id="415339f8-465a-41a3-3588-fec3b57097c0" loading="eager"></button><div class="button-wrapper"><a data-w-id="fd145e3d-5a30-4e16-9a77-740d651ed9e9" href="#work" class="button w-inline-block"><div>View my work</div><img src="/assets/e01982dd2691a952.svg" loading="lazy" style="width: 0rem; height: 2rem;" alt="" class="button-icon"></a><a href="/rian-rodrigues-resume.pdf" class="button-secondary w-button" target="_blank">My resume</a></div></div></div></div></div><div class="section-showcase" id="previas-dos-projetos"><div class="padding-global"><div class="padding-section-medium"><div class="container-small"><div class="align-center"><h6 class="text-align-center">SOFTWARE DEVELOPMENT</h6><div class="margin-top margin-small"><h2 class="text-align-center">From the first idea to a live product.</h2></div></div></div></div></div></div><div class="showcase-images_wrapper"><img src="/projects/mobile-en/dropboox.png" loading="lazy" alt="English mobile website for Dropboox" class="showcase-image"><img src="/projects/mobile-en/helixq.png" loading="lazy" alt="English mobile website for HelixQ" class="showcase-image image-2"><img src="/projects/mobile-en/vexus-ai.png" loading="lazy" alt="English mobile website for Vexus AI" class="showcase-image image-3"><img src="/projects/mobile-en/aivaro.png" loading="lazy" alt="English mobile website for Aivaro" class="showcase-image image-2"><img src="/projects/mobile-en/ravorai.png" loading="lazy" alt="English mobile website for RavorAI" class="showcase-image"></div><div class="section-awarness"><div class="padding-global"><div class="padding-section-small"><div class="container-small"><div class="margin-top margin-small"><div class="cut-heading-wrapper"><h3>It’s not just about code.</h3><div class="cut"></div></div><h3>It’s about driving results.</h3><div class="margin-top margin-small"></div><div class="margin-top margin-small"></div><p class="rian-intro">End-to-end project ownership. From idea to market, with a focus on sales and revenue.</p></div></div></div></div></div><div class="rd-lower">
+      <section class="rd-work rd-wrap" id="work" aria-labelledby="rd-work-title">
+        <div class="rd-section-head lower-reveal"><p class="rd-kicker">01 / PROJECTS &amp; RESULTS</p><h2 id="rd-work-title">From idea.<br>To market.</h2><div class="rd-head-aside"><span class="rd-blue-line"></span><p>Products launched.<br>Customers buying.</p><small>Built entirely by me,<br>from start to finish.</small></div></div>
+        <div class="rd-case-grid"><article class="rd-case lower-reveal" id="case-aivaro">
+          <div class="rd-case-top"><span class="rd-index">01</span><h3>Aivaro</h3><a href="https://www.aivarolab.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Aivaro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"></path></svg></a></div>
+          <a class="rd-case-art rd-dark" href="https://www.aivarolab.com/" target="_blank" rel="noopener noreferrer" aria-label="View Aivaro project">
+            <div class="rd-result"><span>Approved payments</span><strong><span>BRL </span>180,077.00</strong><small>768 approved transactions</small></div>
+            <img src="/projects/mobile-en/aivaro.png" loading="lazy" alt="English mobile interface for Aivaro" width="390" height="694">
+          </a>
+          <div class="rd-case-caption"><p>AI for creators and sellers.</p><span>End-to-end development</span></div>
+          <details class="rd-evidence"><summary>Behind the numbers <span>+</span></summary><div><p>768 approved transactions · payment history through October 21, 2026.</p><p>Gross total recorded in the database, before fees and taxes. No refunds are recorded in this table; any platform refunds may reduce the actual total. Excludes 30 pending payments.</p></div></details>
+        </article><article class="rd-case lower-reveal" id="case-dropboox">
+          <div class="rd-case-top"><span class="rd-index">02</span><h3>Dropboox</h3><a href="https://www.dropboox.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Visit Dropboox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"></path></svg></a></div>
+          <a class="rd-case-art " href="https://www.dropboox.com.br/" target="_blank" rel="noopener noreferrer" aria-label="View Dropboox project">
+            <div class="rd-result"><span>Gross revenue</span><strong><span>BRL </span>16,643.00</strong><small>59 purchases in the launch month</small></div>
+            <img src="/projects/mobile-en/dropboox.png" loading="lazy" alt="English mobile interface for Dropboox" width="390" height="694">
+          </a>
+          <div class="rd-case-caption"><p>A connected e-commerce operation.</p><span>End-to-end development</span></div>
+          <details class="rd-evidence"><summary>Behind the numbers <span>+</span></summary><div><p>59 approved purchases · October 8–21, 2026 · launch month.</p><p>Figures from payment webhooks. Approved purchases do not necessarily represent unique customers. This is a partial month and gross revenue, not profit.</p></div></details>
+        </article><article class="rd-case lower-reveal" id="case-helixq">
+          <div class="rd-case-top"><span class="rd-index">03</span><h3>HelixQ</h3><a href="https://helixq.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Visit HelixQ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"></path></svg></a></div>
+          <a class="rd-case-art " href="https://helixq.com.br/" target="_blank" rel="noopener noreferrer" aria-label="View HelixQ project">
+            <div class="rd-result"><span>Confirmed payments</span><strong><span>BRL </span>250,562.02</strong><small>Confirmed payment history</small></div>
+            <img src="/projects/mobile-en/helixq.png" loading="lazy" alt="English mobile interface for HelixQ" width="390" height="694">
+          </a>
+          <div class="rd-case-caption"><p>Technology for therapy businesses.</p><span>End-to-end development</span></div>
+          <details class="rd-evidence"><summary>Behind the numbers <span>+</span></summary><div><p>Payment history recorded in the system through October 21, 2026.</p><p>Gross historical total, including BRL 211,609.02 via AbacatePay and BRL 38,953.00 in manual entries. Pending and expired payments are excluded. Before fees; this is not an available withdrawal balance or revenue automatically attributable to the software.</p></div></details>
+        </article><article class="rd-case lower-reveal" id="case-vexus-ai">
+          <div class="rd-case-top"><span class="rd-index">04</span><h3>Vexus AI</h3><a href="https://www.vexusai.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Visit Vexus AI"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"></path></svg></a></div>
+          <a class="rd-case-art rd-dark" href="https://www.vexusai.com.br/" target="_blank" rel="noopener noreferrer" aria-label="View Vexus AI project">
+            <div class="rd-result"><span>Gross revenue</span><strong><span>BRL </span>71,642.71</strong><small>267 recorded purchases</small></div>
+            <img src="/projects/mobile-en/vexus-ai.png" loading="lazy" alt="English mobile interface for Vexus AI" width="390" height="694">
+          </a>
+          <div class="rd-case-caption"><p>AI creation, from product to creative.</p><span>End-to-end development</span></div>
+          <details class="rd-evidence"><summary>Behind the numbers <span>+</span></summary><div><p>267 purchases · BRL 66,542.45 after refunds.</p><p>Recorded through October 21, 2026. Refunds: 19 purchases totaling BRL 5,100.26, leaving 248 purchases. The total after refunds is before gateway fees, commissions, and platform costs; it is not net profit.</p></div></details>
+        </article></div>
+        <p class="rd-data-note">Figures recorded through October 21, 2026. Each project has its own reporting period and methodology.</p>
+        <article class="rd-next-product lower-reveal"><div><p class="rd-kicker">05 / THE NEXT CHAPTER</p><h3>RavorAI.</h3><p>A creative studio for AI images and video direction.</p><span class="rd-status">Launching</span><small>Fully developed. No purchases recorded in the reported period yet.</small><a class="rd-text-link" href="https://ravorai.com.br/" target="_blank" rel="noopener noreferrer">Explore the project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"></path></svg></a></div><img src="/projects/mobile-en/ravorai.png" width="390" height="694" loading="lazy" alt="RavorAI mobile website in English"></article>
+      </section>
+      <section class="rd-process" aria-labelledby="rd-process-title"><div class="rd-wrap"><div class="rd-section-head lower-reveal"><p class="rd-kicker">02 / HOW I WORK</p><h2 id="rd-process-title">Business vision.<br>Full execution.</h2></div><div class="rd-process-grid">
+        <article class="lower-reveal"><span>01</span><h3>Set the direction.</h3><p>Understand the idea, the audience, and the problem the product needs to solve.</p></article>
+        <article class="lower-reveal"><span>02</span><h3>Make it happen.</h3><p>Plan the project and build the entire experience, from start to finish.</p></article>
+        <article class="lower-reveal"><span>03</span><h3>Bring it to market.</h3><p>Prepare the launch, connect the operation, and keep improving the product.</p></article>
+      </div></div></section>
+      <section class="rd-about rd-wrap" id="about" aria-labelledby="rd-about-title"><div class="rd-about-intro lower-reveal"><p class="rd-kicker">03 / BEHIND THE WORK</p><h2 id="rd-about-title">Rian.<br>From idea<br>to delivery.</h2><p>Software developer working across frontend and full stack. My experience brings together product, technology, and execution.</p><a class="rd-text-link" href="https://www.linkedin.com/in/rianrodri/" target="_blank" rel="noopener noreferrer">Explore my background <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"></path></svg></a></div><div class="rd-background lower-reveal">
+        <article><span class="rd-label">EXPERIENCE</span><h3>Linestur / Lines360</h3><p>Frontend Developer · 2024–2026<br>Junior Software Engineer · 2022–2024</p><small>Web and mobile applications for corporate travel and expense management.</small></article>
+        <article><span class="rd-label">EDUCATION</span><h3>Software Engineering</h3><p>UNOPAR · In progress</p></article>
+        <article><span class="rd-label">TECHNOLOGIES</span><div class="rd-tech-list"><span>React</span><span>TypeScript</span><span>Next.js</span><span>React Native</span><span>.NET / C#</span><span>Node.js</span><span>PostgreSQL</span><span>AI &amp; integrations</span></div><a href="https://www.linkedin.com/in/rianrodri/details/certifications/" target="_blank" rel="noopener noreferrer" class="rd-small-link">Certifications on LinkedIn <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"></path></svg></a></article>
+      </div></section>
+      <section class="rd-contact rd-wrap lower-reveal" id="contact" aria-labelledby="rd-contact-title"><div class="rd-contact-inner"><p class="rd-kicker">THE NEXT PROJECT STARTS WITH A CONVERSATION.</p><h2 id="rd-contact-title">Let’s build<br>what’s next.</h2><p>For your product. For your team.</p><div class="rd-contact-actions"><a class="rd-button rd-button-white" href="mailto:riansatro@gmail.com">Let’s talk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"></path></svg></a><a class="rd-button rd-button-outline" href="/rian-rodrigues-resume.pdf" target="_blank">My resume <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"></path></svg></a></div><a class="rd-contact-email" href="mailto:riansatro@gmail.com">riansatro@gmail.com</a></div></section>
+      <footer class="rd-footer rd-wrap"><div><a class="rd-footer-brand" href="#top">Rian Rodrigues.</a><span>© 2026</span></div><nav aria-label="Professional profiles"><a href="https://www.linkedin.com/in/rianrodri/" target="_blank" rel="noopener noreferrer">LinkedIn <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"></path></svg></a><a href="https://github.com/rianrp" target="_blank" rel="noopener noreferrer">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"></path></svg></a><a href="#top">Back to top ↑</a></nav><small>Miles Morales: model by <a href="https://sketchfab.com/3d-models/miles-morales-spiderman-rigged-1f14295a7cf747ebbd7df5ce61cdb85b" target="_blank" rel="noopener noreferrer">J.azali</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> · adapted for this portfolio.</small></footer>
+    </div></main></div><script src="/study.js" defer></script><script type="module" src="/miles/interactive.js"></script><script src="/lower.js" defer></script></body></html>
